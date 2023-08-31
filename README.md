@@ -1,5 +1,7 @@
 # chadwm (Initial look)
 
+My take on siduck's chadwm
+
 <img src="https://github.com/siduck/chadwm/blob/screenshots/screenshots/initial_look.png">
 <img src="https://github.com/siduck/chadwm/blob/screenshots/screenshots/col_layout.png">
 
@@ -34,6 +36,8 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 
 # Install
 
+*UPDATE:* Just clone the repo to a convinent place and run `./install.sh`, it will do the work for you!
+
 ```
 git clone https://github.com/siduck/chadwm --depth 1  ~/.config/chadwm
 cd ~/.config/chadwm/
@@ -64,6 +68,8 @@ alias chadwm='startx ~/.config/chadwm/scripts/run.sh'
 
 ## With Display Manager
 
+*UPDATE:* Just run `./install.sh`, it will do the work for you!
+
 - Create a desktop entry (make sure to change `user` with your user):
 
 ```shell
@@ -81,6 +87,8 @@ Type=Application
 - [wallpaper](https://github.com/siduck/chadwm/blob/screenshots/screenshots/chad.png)
 
 # Recompile
+
+*UPDATE:* Just run `./install.sh`, it will do the work for you!
 
 - You need to recompile dwm after every change you make to its source code.
 
