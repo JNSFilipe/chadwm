@@ -6,7 +6,7 @@
 interval=0
 
 # load colors
-. ~/.config/scripts/bar_themes/onedark
+. ~/.config/scripts/bar_themes/catppuccin
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
@@ -28,7 +28,7 @@ pkg_updates() {
 }
 
 battery() {
-  get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
+  get_capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
   printf "^c$blue^   $get_capacity"
 }
 
@@ -59,5 +59,6 @@ while true; do
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+  # sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+  sleep 1 && xsetroot -name "$(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
 done
