@@ -31,6 +31,7 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 ## Other requirements
 - picom
 - feh
+- hsetroot
 - acpi
 - rofi
 - fzf
