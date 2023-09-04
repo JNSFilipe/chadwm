@@ -25,6 +25,9 @@ rm -rf /home/${SUDO_USER}/.Xresources
 ln -s $(pwd)/bash/.Xresources /home/${SUDO_USER}/.Xresources
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Xresources config was linked to .Xresources"
 
+# Enable running brightnessctl wihtout sudo
+sudo chmod +s /usr/bin/brightnessctl
+
 # Place bashrc config
 curl -s https://ohmyposh.dev/install.sh | sudo bash -s >> /dev/null # Install/Update Oh My Posh
 rm -rf /home/${SUDO_USER}/.config/bash_theme.omp.json
