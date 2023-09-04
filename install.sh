@@ -15,6 +15,11 @@ rm -rf /home/${SUDO_USER}/.config/rofi
 ln -s $(pwd)/rofi /home/${SUDO_USER}/.config/rofi
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) rofi config was linked to .config"
 
+# Place Picom config
+rm -rf /home/${SUDO_USER}/.config/picom
+ln -s $(pwd)/picom /home/${SUDO_USER}/.config/picom
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) picom config was linked to .config"
+
 # Place Xresources config
 rm -rf /home/${SUDO_USER}/.Xresources
 ln -s $(pwd)/bash/.Xresources /home/${SUDO_USER}/.Xresources
