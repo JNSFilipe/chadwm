@@ -1,26 +1,17 @@
 # bashrc
 
 # Load Oh My Posh
-#eval "$(oh-my-posh init bash)"
 eval "$(oh-my-posh init bash --config ~/.config/bash_theme.omp.json)" # TODO convert OMP theme to use catppuccin mocha colours
 
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# # draw horiz line under prompt
-# draw_line() {
-#   local COLUMNS="$COLUMNS"
-#   while ((COLUMNS-- > 0)); do
-#     printf '\e[30m\u2500'
-#   done
-# }
+# Init zoxide
+eval "$(zoxide init bash)"
 
-# my prompt
-PS1="\[\033[32m\]  \[\033[37m\]\[\033[34m\]\w \[\033[0m\]"
-PS2="\[\033[32m\]  > \[\033[0m\]"
+# Ignore case in autocompletiion
+bind 'set completion-ignore-case on'
 
 # Path and Variables
 PATH=$PATH:~/.local/bin
