@@ -154,7 +154,7 @@ static const Key keys[] = {
     {MODKEY,                            XK_u,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
-    { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
+    { MODKEY,                           XK_d,       spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
 
     // toggle stuff
@@ -166,8 +166,8 @@ static const Key keys[] = {
     { MODKEY|ControlMask,               XK_w,       tabmode,        { -1 } },
     { MODKEY,                           XK_j,       focusstack,     {.i = +1 } },
     { MODKEY,                           XK_k,       focusstack,     {.i = -1 } },
-    { MODKEY,                           XK_i,       incnmaster,     {.i = +1 } },
-    { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
+    { MODKEY,                           XK_period,  incnmaster,     {.i = +1 } },
+    { MODKEY,                           XK_comma,   incnmaster,     {.i = -1 } },
 
     // shift view
     { MODKEY,                           XK_Left,    shiftview,      {.i = -1 } },
@@ -221,8 +221,8 @@ static const Key keys[] = {
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
     { MODKEY,                           XK_0,       view,           {.ui = ~0 } },
     { MODKEY|ShiftMask,                 XK_0,       tag,            {.ui = ~0 } },
-    { MODKEY,                           XK_comma,   focusmon,       {.i = -1 } },
-    { MODKEY,                           XK_period,  focusmon,       {.i = +1 } },
+    //{ MODKEY,                           XK_comma,   focusmon,       {.i = -1 } },
+    //{ MODKEY,                           XK_period,  focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,                 XK_comma,   tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask,                 XK_period,  tagmon,         {.i = +1 } },
 
@@ -277,18 +277,18 @@ static const Button buttons[] = {
     * to control these separately (i.e. to retain the feature to move a tiled window
     * into a floating position).
     */
-    { ClkClientWin,         MODKEY,         Button1,        moveorplace,    {.i = 0} },
-    { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-    { ClkClientWin,         ControlMask,    Button1,        dragmfact,      {0} },
-    { ClkClientWin,         ControlMask,    Button3,        dragcfact,      {0} },
-    { ClkTagBar,            0,              Button1,        view,           {0} },
-    { ClkTagBar,            0,              Button3,        toggleview,     {0} },
-    { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-    { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-    { ClkTabBar,            0,              Button1,        focuswin,       {0} },
-    { ClkTabBar,            0,              Button1,        focuswin,       {0} },
-    { ClkTabPrev,           0,              Button1,        movestack,      { .i = -1 } },
-    { ClkTabNext,           0,              Button1,        movestack,      { .i = +1 } },
-    { ClkTabClose,          0,              Button1,        killclient,     {0} },
+    { ClkClientWin,         MODKEY,                Button1,        moveorplace,    {.i = 0} },
+    { ClkClientWin,         MODKEY,                Button2,        togglefloating, {0} },
+    { ClkClientWin,         MODKEY,                Button3,        resizemouse,    {0} },
+    { ClkClientWin,         MODKEY|ControlMask,    Button1,        dragmfact,      {0} },
+    { ClkClientWin,         MODKEY|ControlMask,    Button3,        dragcfact,      {0} },
+    { ClkTagBar,            0,                     Button1,        view,           {0} },
+    { ClkTagBar,            0,                     Button3,        toggleview,     {0} },
+    { ClkTagBar,            MODKEY,                Button1,        tag,            {0} },
+    { ClkTagBar,            MODKEY,                Button3,        toggletag,      {0} },
+    { ClkTabBar,            0,                     Button1,        focuswin,       {0} },
+    { ClkTabBar,            0,                     Button1,        focuswin,       {0} },
+    { ClkTabPrev,           0,                     Button1,        movestack,      { .i = -1 } },
+    { ClkTabNext,           0,                     Button1,        movestack,      { .i = +1 } },
+    { ClkTabClose,          0,                     Button1,        killclient,     {0} },
 };
