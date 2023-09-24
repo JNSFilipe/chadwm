@@ -45,6 +45,17 @@ else
   echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) fzf-tab-completion installed"
 fi
 
+# Place zshrc config
+rm -rf /home/${SUDO_USER}/.zshrc
+ln -s $(pwd)/bash/.zshrc /home/${SUDO_USER}/.zshrc
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) zsh config was linked to .zshrc"
+
+# Place antign
+rm -rf /home/${SUDO_USER}/.config/zsh
+mkdir /home/${SUDO_USER}/.config/zsh
+curl -Ls git.io/antigen > /home/${SUDO_USER}/.config/zsh/antigen.zsh
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) antigen was installed in ~/.config/zsh"
+
 # Check if XSessin File entry exists (so that chadwm appears in the session manager)
 XSESSION_FILE="/usr/share/xsessions/chadwm.desktop"
 if [ -f "${XSESSION_FILE}" ]; then

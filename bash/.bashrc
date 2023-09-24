@@ -1,7 +1,7 @@
 # bashrc
 
 # Load Oh My Posh
-eval "$(oh-my-posh init bash --config ~/.config/bash_theme.omp.json)" # TODO convert OMP theme to use catppuccin mocha colours
+eval "$(oh-my-posh init bash --config ~/.config/bash_theme.omp.json)" 
 
 [[ $- != *i* ]] && return
 
@@ -55,3 +55,4 @@ source "$HOME/.config/fzf-tab-completion/bash/fzf-bash-completion.sh"
 bind -x '"\t": fzf_bash_completion'
 
 . "$HOME/.cargo/env"
+zsh

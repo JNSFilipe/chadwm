@@ -38,6 +38,8 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 - zoxide
 - brightnessctl
 - [logo-ls](https://github.com/Yash-Handa/logo-ls)
+- bash
+- zsh
 
 # Install
 
