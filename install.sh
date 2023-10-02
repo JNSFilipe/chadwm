@@ -25,6 +25,11 @@ rm -rf /home/${SUDO_USER}/.Xresources
 ln -s $(pwd)/bash/.Xresources /home/${SUDO_USER}/.Xresources
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Xresources config was linked to .Xresources"
 
+# Create Simulink for WezTerm 
+rm -rf /home/${SUDO_USER}/.config/wezterm
+ln -s $(pwd)/wezterm /home/${SUDO_USER}/.config/wezterm
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) WezTerm config was linked to .config"
+
 # Enable running brightnessctl wihtout sudo
 sudo chmod +s /usr/bin/brightnessctl
 
