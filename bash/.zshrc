@@ -9,8 +9,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt appendhistory
 
-# Load antigen
-#source ~/.config/zsh/antigen.zsh
+# Load/install znap
 [[ -r ~/.znap/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.znap/znap
@@ -23,14 +22,11 @@ compinit
 # fsf autocompletion
 znap source Aloxaf/fzf-tab
 
-# Fish like autocompletion
+# Fish like gohst autocompletion
 znap source marlonrichert/zsh-autocomplete
 
-# Fish like autocompletion
+# Better zsh autocompletion
 znap source zsh-users/zsh-autosuggestions
-
-# Tell Antigen that you're done.
-# antigen apply
 
 # Setup zoxide
 eval "$(zoxide init zsh)"
@@ -40,12 +36,12 @@ PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.cargo/bin
 
 # Alias
-alias ls='logo-ls'
-alias la='logo-ls -A'
-alias ll='logo-ls -al'
-alias lsg='logo-ls -D'
-alias lag='logo-ls -AD'
-alias llg='logo-ls -alD'
+alias ls='eza --icons'
+alias la='eza --icons -A'
+alias ll='eza --icons -al'
+alias lsg='eza --icons -D'
+alias lag='eza --icons -AD'
+alias llg='eza --icons -alD'
 alias wal="feh --bg-fill"
 alias ww='wget'
 alias ree='redshift -P -O 3500'
@@ -54,7 +50,7 @@ alias vim='nvim'
 alias del='sudo rm -r'
 alias comp='sudo make install'
 alias gl='git clone'
-alias update='sudo apt update && sudo apt upgrade'
-alias instal='sudo apt install'
+# alias update='sudo apt update && sudo apt upgrade'
+# alias instal='sudo apt install'
 
 . "$HOME/.cargo/env"
