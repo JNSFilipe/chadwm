@@ -10,20 +10,27 @@ SAVEHIST=100000
 setopt appendhistory
 
 # Load antigen
-source ~/.config/zsh/antigen.zsh
+#source ~/.config/zsh/antigen.zsh
+[[ -r ~/.znap/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.znap/znap
+source ~/.znap/znap/znap.zsh  # Start Znap
 
 # Start compinit
 autoload -Uz compinit # https://unix.stackexchange.com/questions/339954/zsh-command-not-found-compinstall-compinit-compdef
 compinit
 
 # fsf autocompletion
-antigen bundle Aloxaf/fzf-tab
+znap source Aloxaf/fzf-tab
 
 # Fish like autocompletion
-antigen bundle zsh-users/zsh-autosuggestions
+znap source marlonrichert/zsh-autocomplete
+
+# Fish like autocompletion
+znap source zsh-users/zsh-autosuggestions
 
 # Tell Antigen that you're done.
-antigen apply
+# antigen apply
 
 # Setup zoxide
 eval "$(zoxide init zsh)"
