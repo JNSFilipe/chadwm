@@ -29,17 +29,35 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 - Make sure to setup your terminal's theme accordingly do chadwm's theme such as nord, onedark etc...
 
 ## Other requirements
-- picom
-- feh
-- hsetroot
-- acpi
-- rofi
+
+### Common
 - fzf
 - zoxide
 - brightnessctl
 - eza
 - bash
 - zsh
+- hsetroot
+- acpi
+- jq
+
+### For DWM (X11)
+- picom
+- feh
+- rofi
+
+### For Hyprland (Wayland)
+- Hyprland
+- Hyprpaper
+- waybar
+- material-icons 
+
+The Hyprland config borrowed heavely from:
+- [MathisP75's hyppucin](https://github.com/MathisP75/hyppuccin)
+- [gopi487krishna's wayland-dot-files](https://github.com/gopi487krishna/wayland-dot-files)
+- [Syndrizzle's hotfiles](https://github.com/syndrizzle/hotfiles/tree/worm)
+- [Axarva's dotfiles-2.0](https://github.com/Axarva/dotfiles-2.0)
+- [rxyhn's tokyo](https://github.com/rxyhn/tokyo/)
 
 # Install
 

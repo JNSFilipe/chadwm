@@ -30,6 +30,12 @@ rm -rf /home/${SUDO_USER}/.config/wezterm
 ln -s $(pwd)/wezterm /home/${SUDO_USER}/.config/wezterm
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) WezTerm config was linked to .config"
 
+# Create Simulink for kitty
+rm -rf /home/${SUDO_USER}/.config/kitty
+mkdir -p -- /home/${SUDO_USER}/.config/kitty
+ln -s $(pwd)/bash/kitty.conf /home/${SUDO_USER}/.config/kitty/kitty.conf
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) kitty config was linked to .config"
+
 # Enable running brightnessctl wihtout sudo
 sudo chmod +s /usr/bin/brightnessctl
 
@@ -55,12 +61,6 @@ rm -rf /home/${SUDO_USER}/.zshrc
 ln -s $(pwd)/bash/.zshrc /home/${SUDO_USER}/.zshrc
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) zsh config was linked to .zshrc"
 
-# Place antign
-rm -rf /home/${SUDO_USER}/.config/zsh
-mkdir /home/${SUDO_USER}/.config/zsh
-curl -Ls git.io/antigen > /home/${SUDO_USER}/.config/zsh/antigen.zsh
-echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) antigen was installed in ~/.config/zsh"
-
 # Check if XSessin File entry exists (so that chadwm appears in the session manager)
 XSESSION_FILE="/usr/share/xsessions/chadwm.desktop"
 if [ -f "${XSESSION_FILE}" ]; then
@@ -80,5 +80,16 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Building chadwm... \n"
 rm $(pwd)/chadwm/config.h
 cd $(pwd)/chadwm
 sudo make install >> /dev/null
+
+# Create Simulink for Hyprland and Hyprpaper config
+rm -rf /home/${SUDO_USER}/.config/hypr
+ln -s $(pwd)/hypr /home/${SUDO_USER}/.config/hypr
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Hyprland and Hyprpaper configs were linked to .config"
+
+# Create Simulink for Waybar Config
+rm -rf /home/${SUDO_USER}/.config/waybar
+ln -s $(pwd)/hypr /home/${SUDO_USER}/.config/waybar
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Waybar configs were linked to .config"
+
 
 echo -e "\n$(tput bold setaf 6)Installation done, enjoy!!!\n"
