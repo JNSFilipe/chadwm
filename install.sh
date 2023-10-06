@@ -5,11 +5,6 @@ rm -rf /home/${SUDO_USER}/.config/scripts
 ln -s $(pwd)/scripts /home/${SUDO_USER}/.config/scripts
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) scripts were linked to .config"
 
-# Place eww config
-rm -rf /home/${SUDO_USER}/.config/eww
-ln -s $(pwd)/eww /home/${SUDO_USER}/.config/eww
-echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) eww config was linked to .config"
-
 # Place Rofi config
 rm -rf /home/${SUDO_USER}/.config/rofi
 ln -s $(pwd)/rofi /home/${SUDO_USER}/.config/rofi
@@ -80,15 +75,21 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Building chadwm... \n"
 rm $(pwd)/chadwm/config.h
 cd $(pwd)/chadwm
 sudo make install >> /dev/null
+cd ..
 
 # Create Simulink for Hyprland and Hyprpaper config
 rm -rf /home/${SUDO_USER}/.config/hypr
 ln -s $(pwd)/hypr /home/${SUDO_USER}/.config/hypr
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Hyprland and Hyprpaper configs were linked to .config"
 
+# Place eww config
+rm -rf /home/${SUDO_USER}/.config/eww
+ln -s $(pwd)/eww /home/${SUDO_USER}/.config/eww
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) eww config was linked to .config"
+
 # Create Simulink for Waybar Config
 rm -rf /home/${SUDO_USER}/.config/waybar
-ln -s $(pwd)/hypr /home/${SUDO_USER}/.config/waybar
+ln -s $(pwd)/waybar /home/${SUDO_USER}/.config/waybar
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Waybar configs were linked to .config"
 
 
