@@ -2,7 +2,7 @@
 
 ## Files and cmd
 FILE="$HOME/.cache/eww_launch_side.xyz"
-EWW="$HOME/.local/bin/eww/eww -c $HOME/.config/eww/leftbar"
+EWW="/usr/bin/eww -c $HOME/.config/eww/leftbar"
 
 # windows not in use
 # separ

@@ -4,7 +4,7 @@
 (defpoll uptime :interval "50s" "uptime -p | sed -e 's/up //;s/ hours,/h/;s/ hour,/h/;s/ minutes/m/;s/ minute/m/'")
 
 (defpoll time_hour :interval "5m"
-       "date +\"%I\"")
+       "date +\"%H\"")
 (defpoll time_year :interval "5m"
        "date +\"%C\"")
 (defpoll time_min :interval "5s"
@@ -26,23 +26,23 @@
 (defpoll loop_status :interval "5s"  "~/.config/eww/leftbar/scripts/music_info --loop_ic")
 (defpoll song_time :interval "1s"  "~/.config/eww/leftbar/scripts/music_info --time")
 
-(defpoll battery :interval "15s" "./scripts/battery --bat")
-(defpoll memory :interval "15s" "scripts/memory")
-(defpoll cpu :interval "17s" "scripts/cpu")
+(defpoll battery :interval "15s" "../scripts/battery --bat")
+(defpoll memory :interval "15s" "../scripts/memory")
+(defpoll cpu :interval "17s" "../scripts/cpu")
 
 
-(defpoll wifi_icon :interval "15s" "./scripts/wifi wifi")
-(defpoll wifi_col :interval "15s" "scripts/wifi wifi_col")
-(defpoll wifi_bg :interval "17s" "scripts/wifi wifi_bg")
+(defpoll wifi_icon :interval "15s" "../scripts/wifi wifi")
+(defpoll wifi_col :interval "15s" "../scripts/wifi wifi_col")
+(defpoll wifi_bg :interval "17s" "../scripts/wifi wifi_bg")
 
-(defpoll notif_icon :interval "15s" "./scripts/notifs notifs")
-(defpoll notif_col :interval "15s" "scripts/notifs notifs_col")
-(defpoll notif_bg :interval "17s" "scripts/notifs notifs_bg")
+(defpoll notif_icon :interval "15s" "../scripts/notifs notifs")
+(defpoll notif_col :interval "15s" "../scripts/notifs notifs_col")
+(defpoll notif_bg :interval "17s" "../scripts/notifs notifs_bg")
 
 
-(defpoll vol_icon :interval "15s" "./scripts/vol vol")
-(defpoll vol_col :interval "15s" "scripts/vol vol_col")
-(defpoll vol_bg :interval "17s" "scripts/vol vol_bg")
+(defpoll vol_icon :interval "15s" "../scripts/vol vol")
+(defpoll vol_col :interval "15s" "../scripts/vol vol_col")
+(defpoll vol_bg :interval "17s" "../scripts/vol vol_bg")
 
 (defpoll volume_percent :interval "6s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll mic_percent :interval "6s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
@@ -196,10 +196,10 @@
 				(box :orientation "h" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
 					(box :class "volume_bar" :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
                             (scale :flipped "true" :orientation "v" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
-                            (label  :text "" :class "vol_icon"))
+                            (label  :text "󰕾" :class "vol_icon"))
 					(box :class "mic_bar" :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
                             (scale :flipped "true" :orientation "v" :min 0 :max 101 :value mic_percent :active "false")
-                            (label  :text "" :class "mic_icon")))))
+                            (label  :text "󰍬" :class "mic_icon")))))
 
 
 
@@ -210,13 +210,13 @@
       (button :class "notif_but" :onclick "dunstctl set-paused toggle" :style "color: ${notif_col}; background-color: ${notif_bg};"  notif_icon))
     (box :orientation "h" :hexpand "false" :vexpand "false" :space-evenly "false"
       (button :class "vol_but" :onclick "amixer -D pulse set Master toggle" :style "color: ${vol_col}; background-color: ${vol_bg};"  vol_icon)
-      (button :class "log_but" :onclick "bspc quit" "")
+      (button :class "log_but" :onclick "hyprctl dispatch exit" "")
       (button :class "log_but" :onclick "poweroff" ""))))
 
 
 (defwidget stats []
   (box :orientation "h" :space-evenly "false" 
-;;    (label :class "br_icon" :text "")
+;;    (label :class "br_icon" :text "󰃞")
 	  (box :class "bright" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
           (scale :orientation "h" :min 0 :max 100 :value brightness :onchange "brightnessctl set {}%" ))))
 
@@ -230,6 +230,7 @@
 
 
 (defwindow main
+  :monitor 0
   :geometry (geometry :anchor "left center"
              :width "500px"
              :height "90%"
@@ -239,6 +240,7 @@
 
 
 (defwindow pfp
+  :monitor 0
   :geometry (geometry :anchor "left top"
              :width "190px"
              :height "23"
@@ -248,6 +250,7 @@
 
 
 (defwindow time
+  :monitor 0
   :geometry (geometry :anchor "left top"
              :width "260px"
              :height "100"
@@ -257,6 +260,7 @@
 
 
 (defwindow song :stacking "fg" :focusable "false" :screen 1
+  :monitor 0
   :geometry (geometry 
              :width "260px"
              :height "140px"
@@ -265,6 +269,7 @@
   (music))
 
 (defwindow song_ctl :stacking "fg" :focusable "false" :screen 1
+  :monitor 0
   :geometry (geometry 
              :width "70px"
              :height "187px"
@@ -274,6 +279,7 @@
 
 
 (defwindow song_prog :stacking "fg" :focusable "false" :screen 1
+  :monitor 0
   :geometry (geometry 
              :width "250px"
              :height "30px"
@@ -282,6 +288,7 @@
   (music_prog))
 
 (defwindow seper :stacking "fg" :focusable "false" :screen 1
+  :monitor 0
   :geometry (geometry 
              :width "420px"
              :height "2px"
@@ -291,6 +298,7 @@
 
 
 (defwindow sys_usg
+  :monitor 0
   :geometry (geometry
              :width "420px"
              :height "160px"
@@ -301,6 +309,7 @@
 
 
 (defwindow audio
+  :monitor 0
   :geometry (geometry
              :width "0px"
              :height "160px"
@@ -310,6 +319,7 @@
 
 
 (defwindow sys_tray
+  :monitor 0
   :geometry (geometry
              :width "100px"
              :height "120px"
@@ -319,6 +329,7 @@
 
 
 (defwindow quote
+  :monitor 0
   :geometry (geometry
              :width "295px"
              :height "10px"
