@@ -1,0 +1,33 @@
+.calendar {
+    background: $background-base;
+    border: 1px solid $text-inverse;
+    border-radius: $rounded-large;
+    color: $text-base;
+
+    calendar {
+
+        &:selected {
+            background: $background-accent;
+            border-radius: $rounded-large;
+
+        }
+
+        &.header {
+            color: $text-muted;
+        }
+
+        &.highlight {
+            background-color: transparent;
+            color: $text-accent;
+        }
+
+        &:indeterminate {
+            color: $text-inverse;
+        }
+
+        font-size: 1.3em;
+        padding: .2em;
+    }
+
+    padding: 1em;
+}

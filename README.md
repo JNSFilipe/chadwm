@@ -49,8 +49,12 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 ### For Hyprland (Wayland)
 - Hyprland
 - Hyprpaper
-- waybar
+- ~~waybar~~
 - material-icons 
+- eww-tray-wayland
+- blueberry-wayland
+- hyprshot
+- gtklock
 
 The Hyprland config borrowed heavely from:
 - [MathisP75's hyppucin](https://github.com/MathisP75/hyppuccin)
@@ -58,6 +62,7 @@ The Hyprland config borrowed heavely from:
 - [Syndrizzle's hotfiles](https://github.com/syndrizzle/hotfiles/tree/worm)
 - [Axarva's dotfiles-2.0](https://github.com/Axarva/dotfiles-2.0)
 - [rxyhn's tokyo](https://github.com/rxyhn/tokyo/)
+. [WinterKRALLe's dotfiles](https://github.com/WinterKRALLe/dotfiles)
 
 # Install
 

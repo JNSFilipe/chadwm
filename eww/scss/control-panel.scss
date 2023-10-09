@@ -1,0 +1,33 @@
+.control-panel {
+    &:active {
+        border-bottom: 2px solid $background-accent;
+    }
+
+    &:hover {
+        border-bottom: 2px solid $background-accent;
+    }
+
+    .network {
+        color: #BB9AF7;
+    }
+
+    .volume {
+        color: #73DACA;
+    }
+
+    .microphone {
+        color: #F7768E;
+    }
+
+    .battery {
+        color: #7AA2F7;
+    }
+}
+
+.control-panel.active {
+    border-bottom: 2px solid $background-accent;
+}
+
+.volume {
+    font-size: 1.2em;
+}

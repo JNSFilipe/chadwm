@@ -1,3 +1,0 @@
-#!/bin/sh
-M=$(free -m | grep Mem | awk '{print ($3/$2)*100}')
-echo ${M%.*}

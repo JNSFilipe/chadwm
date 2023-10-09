@@ -1,0 +1,61 @@
+.bar {
+    padding: .5em 1.5em;
+    border-radius: 16px;
+    color: $text-muted;
+    margin: .5em 1em 0;
+    background: $background-base;
+
+    .separator {
+        color: $text-inverse;
+    }
+
+    .menu {
+        font-size: 1.5em;
+        color: #7DCFFF;
+    }
+
+    .workspaces {
+
+        & box button label {
+
+            &.active {
+                color: $text-muted;
+            }
+        }
+    }
+
+    .screenshot {
+        color: #E0AF68;
+    }
+
+    .colorpicker {
+        color: #9eb9cb;
+    }
+
+    .datetime {
+        color: $text-muted;
+
+        &:hover {
+            border-bottom: 2px solid $background-accent;
+        }
+    }
+
+    .datetime.active {
+        border-bottom: 2px solid $background-accent;
+    }
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.menu_icon {
+    box {
+        min-width: 3em;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url($icons+'arch_silver.svg');
+    }
+
+}
