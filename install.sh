@@ -77,6 +77,11 @@ cd $(pwd)/chadwm
 sudo make install >> /dev/null
 cd ..
 
+# Get Wallpapers
+rm -rf /home/${SUDO_USER}/.config/wallpapers
+git clone --quiet https://github.com/Gingeh/wallpapers.git /home/${SUDO_USER}/.config/wallpapers
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Wallpapers were installed"
+
 # Create Simulink for Hyprland and Hyprpaper config
 rm -rf /home/${SUDO_USER}/.config/hypr
 ln -s $(pwd)/hypr /home/${SUDO_USER}/.config/hypr
