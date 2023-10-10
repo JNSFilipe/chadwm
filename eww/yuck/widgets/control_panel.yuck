@@ -2,15 +2,30 @@
 (defwidget _battery []
   (box
     :class "battery"
-    (label :text "${BATcapacity}% ")
-    (image :path {
-      BATstatus == "charging" ? "./icons/battery-charging-fill.svg" :
-      BATcapacity < 10 ? "./icons/battery-empty-fill.svg" :
-      BATcapacity < 31 ? "./icons/battery-low-fill.svg" :
-      BATcapacity < 60 ? "./icons/battery-medium-fill.svg" :
-      BATcapacity < 91 ? "./icons/battery-high-fill.svg" :
-      "./icons/battery-full-fill.svg"
-    } :image-height 24)
+    (label :text {
+      BATstatus == "charging" ? "${BATcapacity}% 󱐋":
+      BATcapacity < 10 ? "${BATcapacity}% 󰁺":
+      BATcapacity < 20 ? "${BATcapacity}% 󰁻":
+      BATcapacity < 30 ? "${BATcapacity}% 󰁼󱐋":
+      BATcapacity < 40 ? "${BATcapacity}% 󰁽":
+      BATcapacity < 50 ? "${BATcapacity}% 󰁾":
+      BATcapacity < 60 ? "${BATcapacity}% 󰁿":
+      BATcapacity < 70 ? "${BATcapacity}% 󰂀":
+      BATcapacity < 80 ? "${BATcapacity}% 󰂁":
+      BATcapacity < 90 ? "${BATcapacity}% 󰂂":
+      BATcapacity < 100 ? "${BATcapacity}% 󰁹":
+      "󰁹"
+      }
+
+    )
+;    (image :path {
+;      BATstatus == "charging" ? "./icons/battery-charging-fill.svg" :
+;      BATcapacity < 10 ? "./icons/battery-empty-fill.svg" :
+;      BATcapacity < 31 ? "./icons/battery-low-fill.svg" :
+;      BATcapacity < 60 ? "./icons/battery-medium-fill.svg" :
+;      BATcapacity < 91 ? "./icons/battery-high-fill.svg" :
+;      "./icons/battery-full-fill.svg"
+;    } :image-height 24)
   )
 )
 

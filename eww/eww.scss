@@ -14,6 +14,7 @@ $rounded-full: 9999px;
 $rounded-large: 24px;
 $rounded-medium: 8px;
 
+@import "./scss/catppuccin.scss"
 @import "./scss/powermenu.scss";
 @import "./scss/screenshot.scss";
 @import "./scss/system-menu.scss";

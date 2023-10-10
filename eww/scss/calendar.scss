@@ -1,28 +1,29 @@
 .calendar {
-    background: $background-base;
-    border: 1px solid $text-inverse;
+    background: $background;
+    border: 2px solid $teal;
     border-radius: $rounded-large;
-    color: $text-base;
+    color: $text;
 
     calendar {
 
         &:selected {
-            background: $background-accent;
+            background: $teal;
+            color: $background;
             border-radius: $rounded-large;
 
         }
 
         &.header {
-            color: $text-muted;
+            color: $text;
         }
 
         &.highlight {
             background-color: transparent;
-            color: $text-accent;
+            color: $green;
         }
 
         &:indeterminate {
-            color: $text-inverse;
+            color: $surface1;
         }
 
         font-size: 1.3em;

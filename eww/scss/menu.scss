@@ -1,14 +1,14 @@
 .menu-content {
-    border: 1px solid $text-inverse;
+    border: 2px solid $teal;
     border-radius: $rounded-medium;
-    background: $background-base;
+    background: $background;
 
     .menu-wrapper {
         min-width: 13.75em;
         margin: 0 1em;
 
         .separator {
-            background: $text-inverse;
+            background: $overlay1;
             margin: 0 .5em;
         }
 
@@ -27,9 +27,9 @@
             .item {
 
                 &:hover {
-                    background: $background-inverse;
+                    background: $teal;
                     border-radius: $rounded-medium;
-                    color: $text-base;
+                    color: $background;
                 }
 
                 label {
@@ -42,8 +42,8 @@
 
 .location {
     border-radius: $rounded-medium;
-    border: 1px solid $text-inverse;
-    background: $background-base;
+    border: 2px solid $teal;
+    background: $background;
     min-width: 150px;
 
     .items {
@@ -53,8 +53,8 @@
             border-radius: $rounded-medium;
 
             &:hover {
-                background: $background-inverse;
-                color: $text-base;
+                background: $teal;
+                color: $background;
             }
 
             label {

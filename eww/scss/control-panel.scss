@@ -1,31 +1,31 @@
 .control-panel {
     &:active {
-        border-bottom: 2px solid $background-accent;
+        border-bottom: 2px solid $teal;
     }
 
     &:hover {
-        border-bottom: 2px solid $background-accent;
+        border-bottom: 2px solid $teal;
     }
 
     .network {
-        color: #BB9AF7;
+        color: $mauve;
     }
 
     .volume {
-        color: #73DACA;
+        color: $teal;
     }
 
     .microphone {
-        color: #F7768E;
+        color: $maroon;
     }
 
     .battery {
-        color: #7AA2F7;
+        color: $lavender;
     }
 }
 
 .control-panel.active {
-    border-bottom: 2px solid $background-accent;
+    border-bottom: 2px solid $teal;
 }
 
 .volume {

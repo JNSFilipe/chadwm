@@ -1,17 +1,17 @@
 .bar {
     padding: .5em 1.5em;
     border-radius: 16px;
-    color: $text-muted;
+    color: $text;
     margin: .5em 1em 0;
-    background: $background-base;
+    background: $background;
 
     .separator {
-        color: $text-inverse;
+        color: $overlay1;
     }
 
     .menu {
         font-size: 1.5em;
-        color: #7DCFFF;
+        color: $blue;
     }
 
     .workspaces {
@@ -19,29 +19,29 @@
         & box button label {
 
             &.active {
-                color: $text-muted;
+                color: $text;
             }
         }
     }
 
     .screenshot {
-        color: #E0AF68;
+        color: $yellow;
     }
 
     .colorpicker {
-        color: #9eb9cb;
+        color: $sky;
     }
 
     .datetime {
-        color: $text-muted;
+        color: $text;
 
         &:hover {
-            border-bottom: 2px solid $background-accent;
+            border-bottom: 2px solid $teal;
         }
     }
 
     .datetime.active {
-        border-bottom: 2px solid $background-accent;
+        border-bottom: 2px solid $teal;
     }
 }
 

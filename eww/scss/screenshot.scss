@@ -1,5 +1,5 @@
     .content {
-        background: $background-base;
+        background: $background;
         padding: 1em 0;
         border-radius: $rounded-large;
         min-width: 33em;
@@ -18,13 +18,13 @@
 
             .button {
                 border-radius: $rounded-large;
-                background: $background-muted;
+                background: $background;
                 margin: 1em;
                 padding: 0 1em;
 
                 &:hover {
-                    background: $background-inverse;
-                    color: $text-accent;
+                    background: $teal;
+                    color: $background;
                 }
 
                 box {

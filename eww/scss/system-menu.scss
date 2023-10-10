@@ -1,11 +1,11 @@
 .system {
-    background: $background-base;
-    border: 1px solid $text-inverse;
+    background: $background;
+    border: 2px solid $teal;
     border-radius: $rounded-large;
     padding: 1em;
 
     .muted {
-        background: $background-muted;
+        background: $mantle;
         padding: 1em;
         border-radius: $rounded-large;
     }
@@ -26,38 +26,38 @@
 
 .volume {
     .sicon {
-        color: #73DACA;
+        color: $teal;
     }
 }
 
 .brightness {
     .sicon {
-        color: #E0AF68;
+        color: $peach;
     }
 }
 
 .sys .prog {
 
     &.cpu {
-        color: #73DACA;
+        color: $sapphire;
     }
 
     &.ram {
-        color: #E0AF68;
+        color: $yellow;
     }
 
     &.temp {
-        color: #F7768E;
+        color: $maroon;
     }
 
     &.battery {
-        color: #7AA2F7;
+        color: $lavender;
     }
 
-    background: $background-inverse;
+    background: $background;
 
     label {
-        color: $text-base;
+        color: $text;
     }
 }
 
@@ -65,7 +65,7 @@
 
 
     scale trough {
-        background-color: $background-inverse;
+        background-color: $background;
         border-radius: 10px;
         min-height: 14px;
 
@@ -76,11 +76,11 @@
 }
 
 .volume scale trough highlight {
-    background: #73DACA;
+    background: $teal;
 }
 
 .brightness scale trough highlight {
-    background: #E0AF68;
+    background: $peach;
 }
 
 .sicon {
@@ -101,19 +101,19 @@
 
 
 .arrowbutton {
-    background: $background-inverse;
+    background: $background;
     border-radius: $rounded-large;
 
     &.wifi.active {
-        background: #BB9AF7;
+        background: $mauve;
     }
 
     &.blue.active {
-        background: $background-accent;
+        background: $blue;
     }
 
     &.mic.active {
-        background: #F7768E;
+        background: $red;
     }
 
     .eventbox {

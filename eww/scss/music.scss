@@ -1,8 +1,8 @@
 .music {
-    background: $background-base;
+    background: $background;
     border-radius: $rounded-large;
     padding: 2em;
-    border: 1px solid $text-inverse;
+    border: 1px solid $text;
 
     .buttons {
         margin: 0 2em;
@@ -16,13 +16,13 @@
     }
 
     scale trough {
-        background-color: $background-inverse;
+        background-color: $background;
         border-radius: $rounded-full;
         min-width: 10em;
         min-height: 0.75em;
 
         highlight {
-            background: $background-accent;
+            background: $teal;
             color: #000000;
             border-radius: $rounded-medium;
         }
