@@ -3,6 +3,7 @@ local config = {}
 
 -- Set theme
 config.color_scheme = "Catppuccin Mocha"
+config.window_background_opacity = 0.9
 
 -- Config Fonts
 config.font = wezterm.font('JetBrainsMono Nerd Font')

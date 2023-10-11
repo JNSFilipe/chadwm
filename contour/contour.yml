@@ -116,6 +116,6 @@ profiles:
             blinking: false
             blinking_interval: 500
         background:
-              opacity: 1.0
+              opacity: 0.9
               blur: true
         colors: "catppuccin_mocha"
