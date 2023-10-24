@@ -6,7 +6,7 @@
       BATstatus == "charging" ? "${BATcapacity}% 󱐋":
       BATcapacity < 10 ? "${BATcapacity}% 󰁺":
       BATcapacity < 20 ? "${BATcapacity}% 󰁻":
-      BATcapacity < 30 ? "${BATcapacity}% 󰁼󱐋":
+      BATcapacity < 30 ? "${BATcapacity}% 󰁼":
       BATcapacity < 40 ? "${BATcapacity}% 󰁽":
       BATcapacity < 50 ? "${BATcapacity}% 󰁾":
       BATcapacity < 60 ? "${BATcapacity}% 󰁿":
