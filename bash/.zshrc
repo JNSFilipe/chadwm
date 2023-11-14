@@ -34,6 +34,7 @@ eval "$(zoxide init zsh)"
 # Path and Variables
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.cargo/bin
+PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 # Alias
 alias ls='eza --icons'

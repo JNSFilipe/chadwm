@@ -55,6 +55,14 @@ rm -rf /home/${SUDO_USER}/.zshrc
 ln -s $(pwd)/bash/.zshrc /home/${SUDO_USER}/.zshrc
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) zsh config was linked to .zshrc"
 
+# Place tmux config
+rm -rf /home/${SUDO_USER}/.tmux*
+ln -s $(pwd)/bash/.tmux.conf /home/${SUDO_USER}/.tmux.conf
+git clone --quiet https://github.com/tmux-plugins/tpm /home/${SUDO_USER}/.tmux/plugins/tpm
+# chmod -R 777 /home/${SUDO_USER}/.tmux/plugins/tpm
+/home/${SUDO_USER}/.tmux/plugins/tpm/bin/install_plugins
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) tmux config was linked to .tmux.conf"
+
 # Check if XSessin File entry exists (so that chadwm appears in the session manager)
 XSESSION_FILE="/usr/share/xsessions/chadwm.desktop"
 if [ -f "${XSESSION_FILE}" ]; then

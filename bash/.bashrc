@@ -16,6 +16,7 @@ bind 'set completion-ignore-case on'
 # Path and Variables
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.cargo/bin
+PATH=$PATH:$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin
 
 # bash history
 HISTSIZE=
