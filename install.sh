@@ -20,7 +20,7 @@ rm -rf /home/${SUDO_USER}/.Xresources
 ln -s $(pwd)/bash/.Xresources /home/${SUDO_USER}/.Xresources
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Xresources config was linked to .Xresources"
 
-# Create Simulink for WezTerm 
+# Create Simulink for WezTerm
 rm -rf /home/${SUDO_USER}/.config/wezterm
 ln -s $(pwd)/wezterm /home/${SUDO_USER}/.config/wezterm
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) WezTerm config was linked to .config"
@@ -34,7 +34,7 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) contour config was linked to .config
 sudo chmod +s /usr/bin/brightnessctl
 
 # Place bashrc config
-curl -s https://ohmyposh.dev/install.sh | sudo bash -s >> /dev/null # Install/Update Oh My Posh
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s >>/dev/null # Install/Update Oh My Posh
 rm -rf /home/${SUDO_USER}/.config/bash_theme.omp.json
 ln -s $(pwd)/bash/theme.omp.json /home/${SUDO_USER}/.config/bash_theme.omp.json
 rm -rf /home/${SUDO_USER}/.bashrc
@@ -44,10 +44,10 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) bash config was linked to .bashrc"
 # Install fzf-tab-completion
 FZF_PATH_COMPLETION_DIR="/home/${SUDO_USER}/.config/fzf-tab-completion"
 if [ -d "${FZF_PATH_COMPLETION_DIR}" ]; then
-  echo -e "\n$(tput bold)-WARN:$(tput sgr0) fzf-tab-completion already installed!!!"
+	echo -e "\n$(tput bold)-WARN:$(tput sgr0) fzf-tab-completion already installed!!!"
 else
-  git clone https://github.com/lincheney/fzf-tab-completion.git ${FZF_PATH_COMPLETION_DIR}
-  echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) fzf-tab-completion installed"
+	git clone https://github.com/lincheney/fzf-tab-completion.git ${FZF_PATH_COMPLETION_DIR}
+	echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) fzf-tab-completion installed"
 fi
 
 # Place zshrc config
@@ -59,29 +59,29 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) zsh config was linked to .zshrc"
 rm -rf /home/${SUDO_USER}/.tmux*
 ln -s $(pwd)/bash/.tmux.conf /home/${SUDO_USER}/.tmux.conf
 git clone --quiet https://github.com/tmux-plugins/tpm /home/${SUDO_USER}/.tmux/plugins/tpm
-# chmod -R 777 /home/${SUDO_USER}/.tmux/plugins/tpm
-/home/${SUDO_USER}/.tmux/plugins/tpm/bin/install_plugins
+chmod -R 777 /home/${SUDO_USER}/.tmux/plugins/
+# /home/${SUDO_USER}/.tmux/plugins/tpm/bin/install_plugins
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) tmux config was linked to .tmux.conf"
 
 # Check if XSessin File entry exists (so that chadwm appears in the session manager)
 XSESSION_FILE="/usr/share/xsessions/chadwm.desktop"
 if [ -f "${XSESSION_FILE}" ]; then
-  echo -e "\n$(tput bold)-WARN:$(tput sgr0) ${XSESSION_FILE} already exists!!!"
+	echo -e "\n$(tput bold)-WARN:$(tput sgr0) ${XSESSION_FILE} already exists!!!"
 else
-  echo "[Desktop Entry]"                                  >> ${XSESSION_FILE}
-  echo "Name=chadwm"                                      >> ${XSESSION_FILE}
-  echo "Comment=dwm made beautiful"                       >> ${XSESSION_FILE}
-  echo "Exec=/home/${SUDO_USER}/.config/scripts/./run.sh" >> ${XSESSION_FILE}
-  echo "Type=Application"                                 >> ${XSESSION_FILE}
-  
-  echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) XSession file entry was created"
+	echo "[Desktop Entry]" >>${XSESSION_FILE}
+	echo "Name=chadwm" >>${XSESSION_FILE}
+	echo "Comment=dwm made beautiful" >>${XSESSION_FILE}
+	echo "Exec=/home/${SUDO_USER}/.config/scripts/./run.sh" >>${XSESSION_FILE}
+	echo "Type=Application" >>${XSESSION_FILE}
+
+	echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) XSession file entry was created"
 fi
 
 # Build chadwm
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Building chadwm... \n"
 rm $(pwd)/chadwm/config.h
 cd $(pwd)/chadwm
-sudo make install >> /dev/null
+sudo make install >>/dev/null
 cd ..
 
 # Get Wallpapers
@@ -103,6 +103,5 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) eww config was linked to .config"
 rm -rf /home/${SUDO_USER}/.config/waybar
 ln -s $(pwd)/waybar /home/${SUDO_USER}/.config/waybar
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Waybar configs were linked to .config"
-
 
 echo -e "\n$(tput bold setaf 6)Installation done, enjoy!!!\n"
