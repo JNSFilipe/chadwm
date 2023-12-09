@@ -25,10 +25,10 @@ rm -rf /home/${SUDO_USER}/.config/wezterm
 ln -s $(pwd)/wezterm /home/${SUDO_USER}/.config/wezterm
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) WezTerm config was linked to .config"
 
-# Create Simulink for contour
-rm -rf /home/${SUDO_USER}/.config/contour
-ln -s $(pwd)/contour /home/${SUDO_USER}/.config/contour
-echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) contour config was linked to .config"
+# Create Simulink for kitty
+rm -rf /home/${SUDO_USER}/.config/kitty
+ln -s $(pwd)/bash/kitty.conf /home/${SUDO_USER}/.config/kitty/kitty.conf
+echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) kitty config was linked to .config"
 
 # Enable running brightnessctl wihtout sudo
 sudo chmod +s /usr/bin/brightnessctl
