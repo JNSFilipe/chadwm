@@ -27,6 +27,7 @@ echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) WezTerm config was linked to .config
 
 # Create Simulink for kitty
 rm -rf /home/${SUDO_USER}/.config/kitty
+mkdir /home/${SUDO_USER}/.config/kitty
 ln -s $(pwd)/bash/kitty.conf /home/${SUDO_USER}/.config/kitty/kitty.conf
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) kitty config was linked to .config"
 
