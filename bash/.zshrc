@@ -36,6 +36,11 @@ PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.cargo/bin
 PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
+# If not within tmux, bind ctrl+f to session starter
+if [ -z "$TMUX" ]; then
+    bindkey -s "^f" "zzz\n"
+fi
+
 # Alias
 alias ls='eza --icons'
 alias la='eza --icons -A'
