@@ -102,9 +102,4 @@ rm -rf /home/${SUDO_USER}/.config/eww
 ln -s $(pwd)/eww /home/${SUDO_USER}/.config/eww
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) eww config was linked to .config"
 
-# Create Simulink for Waybar Config
-rm -rf /home/${SUDO_USER}/.config/waybar
-ln -s $(pwd)/waybar /home/${SUDO_USER}/.config/waybar
-echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) Waybar configs were linked to .config"
-
 echo -e "\n$(tput bold setaf 6)Installation done, enjoy!!!\n"
