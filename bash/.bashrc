@@ -1,7 +1,7 @@
 # bashrc
 
 # Load Oh My Posh
-eval "$(oh-my-posh init bash --config ~/.config/bash_theme.omp.json)" 
+eval "$(oh-my-posh init bash --config ~/.config/bash_theme.omp.json)"
 
 [[ $- != *i* ]] && return
 
@@ -16,7 +16,7 @@ bind 'set completion-ignore-case on'
 # Path and Variables
 PATH=$PATH:~/.local/bin
 PATH=$PATH:~/.cargo/bin
-PATH=$PATH:$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin
+PATH=$PATH:~/Scripts/
 
 # bash history
 HISTSIZE=
