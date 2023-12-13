@@ -53,8 +53,9 @@ fi
 
 # Place zshrc config
 rm -rf /home/${SUDO_USER}/.zshrc
+rm -rf /home/${SUDO_USER}/Scripts
 ln -s $(pwd)/bash/.zshrc /home/${SUDO_USER}/.zshrc
-ln -s $(pwd)/bash/zzz /home/${SUDO_USER}/Scripts/zzz
+ln -s $(pwd)/scripts /home/${SUDO_USER}/Scripts
 echo -e "\n$(tput bold)-CONFIG:$(tput sgr0) zsh config was linked to .zshrc"
 
 # Place tmux config
